@@ -51,6 +51,7 @@ public class FarmaciasJFrame extends javax.swing.JFrame {
         buttonSair = new javax.swing.JButton();
         menuIdioma = new javax.swing.JMenuBar();
         labelIdioma = new javax.swing.JMenu();
+        labelRelatorio = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -136,6 +137,10 @@ public class FarmaciasJFrame extends javax.swing.JFrame {
         labelIdioma.setText("Idioma");
         labelIdioma.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         menuIdioma.add(labelIdioma);
+
+        labelRelatorio.setText("Relatório");
+        labelRelatorio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        menuIdioma.add(labelRelatorio);
 
         setJMenuBar(menuIdioma);
 
@@ -338,6 +343,7 @@ public class FarmaciasJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel labelBuscar;
     private javax.swing.JLabel labelFarmacias;
     private javax.swing.JMenu labelIdioma;
+    private javax.swing.JMenu labelRelatorio;
     private javax.swing.JMenuBar menuIdioma;
     private javax.swing.JTable tableFarmacias;
     private javax.swing.JTextField textFieldBusca;

@@ -86,7 +86,7 @@ public class FarmaciaDAO {
     }
     
     public void excluir(Farmacia farmacia) throws Exception {
-        sql = "delete from faracia where codigo = ?";
+        sql = "delete from farmacia where codigo = ?";
 
         con = ConnectionFactory.getConnection();
 

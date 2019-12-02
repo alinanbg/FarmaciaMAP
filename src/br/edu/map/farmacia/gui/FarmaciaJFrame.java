@@ -6,6 +6,11 @@
 package br.edu.map.farmacia.gui;
 
 import br.edu.map.farmacia.dao.FarmaciaDAO;
+import br.edu.map.farmacia.model.Farmacia;
+import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,7 +37,60 @@ public class FarmaciaJFrame extends javax.swing.JFrame {
         
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
-
+    
+    public void validarCampos() throws Exception{
+        if(textFieldNome.getText().isEmpty()){
+            textFieldNome.requestFocus();
+            textFieldNome.setBackground(new Color(255, 153, 153));
+            throw new Exception(" Insira o campo NOME corretamente");
+        }
+        if(textFieldCnpj.getText().isEmpty()){
+            textFieldCnpj.requestFocus();
+            textFieldCnpj.setBackground(new Color(255, 153, 153));
+            throw new Exception(" Insira o campo CNPJ corretamente");
+        }
+        if(textFieldTelefone.getText().isEmpty()){
+            textFieldTelefone.requestFocus();
+            textFieldTelefone.setBackground(new Color(255, 153, 153));
+            throw new Exception(" Insira o campo TELEFONE corretamente");
+        }
+        if(textFieldEmail.getText().isEmpty()){
+            textFieldEmail.requestFocus();
+            textFieldEmail.setBackground(new Color(255, 153, 153));
+            throw new Exception(" Insira o campo EMAIL corretamente");
+        }
+        if(textFieldCidade.getText().isEmpty()){
+            textFieldCidade.requestFocus();
+            textFieldCidade.setBackground(new Color(255, 153, 153));
+            throw new Exception(" Insira o campo CIDADE corretamente");
+        }
+        if(textFieldEstado.getText().isEmpty()){
+            textFieldEstado.requestFocus();
+            textFieldEstado.setBackground(new Color(255, 153, 153));
+            throw new Exception(" Insira o campo ESTADO corretamente");
+        }
+        if(textFieldCep.getText().isEmpty()){
+            textFieldCep.requestFocus();
+            textFieldCep.setBackground(new Color(255, 153, 153));
+            throw new Exception(" Insira o campo CEP corretamente");
+        }
+        if(textFieldRua.getText().isEmpty()){
+            textFieldRua.requestFocus();
+            textFieldRua.setBackground(new Color(255, 153, 153));
+            throw new Exception(" Insira o campo RUA corretamente");
+        }
+        if(textFieldNumero.getText().isEmpty()){
+            textFieldNumero.requestFocus();
+            textFieldNumero.setBackground(new Color(255, 153, 153));
+            throw new Exception(" Insira o campo NUMERO corretamente");
+        }
+        if(textFieldBairro.getText().isEmpty()){
+            textFieldBairro.requestFocus();
+            textFieldBairro.setBackground(new Color(255, 153, 153));
+            throw new Exception(" Insira o campo BAIRRO corretamente");
+        }
+        
+    }
     
 
     /**
@@ -44,21 +102,241 @@ public class FarmaciaJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        labelFarmacia = new javax.swing.JLabel();
+        textFieldCep = new javax.swing.JTextField();
+        labelNome = new javax.swing.JLabel();
+        labelCnpj = new javax.swing.JLabel();
+        labelTelefone = new javax.swing.JLabel();
+        labelEmail = new javax.swing.JLabel();
+        labelCidade = new javax.swing.JLabel();
+        labelEstado = new javax.swing.JLabel();
+        labelCep = new javax.swing.JLabel();
+        labelRua = new javax.swing.JLabel();
+        labelNumero = new javax.swing.JLabel();
+        labelEndereco = new javax.swing.JLabel();
+        labelBairro = new javax.swing.JLabel();
+        textFieldNome = new javax.swing.JTextField();
+        textFieldCnpj = new javax.swing.JTextField();
+        textFieldTelefone = new javax.swing.JTextField();
+        textFieldEmail = new javax.swing.JTextField();
+        textFieldBairro = new javax.swing.JTextField();
+        textFieldNome6 = new javax.swing.JTextField();
+        textFieldCidade = new javax.swing.JTextField();
+        textFieldEstado = new javax.swing.JTextField();
+        textFieldNumero = new javax.swing.JTextField();
+        textFieldRua = new javax.swing.JTextField();
+        buttonConfirmar = new javax.swing.JButton();
+        buttonCancelar = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelFarmacia.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        labelFarmacia.setText("Farmácia");
+        getContentPane().add(labelFarmacia, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 26, -1, -1));
+
+        textFieldCep.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldCepActionPerformed(evt);
+            }
+        });
+        getContentPane().add(textFieldCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 280, -1));
+
+        labelNome.setText("Nome:");
+        getContentPane().add(labelNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+
+        labelCnpj.setText("CNPJ:");
+        getContentPane().add(labelCnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+
+        labelTelefone.setText("Telefone:");
+        getContentPane().add(labelTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+
+        labelEmail.setText("E-mail:");
+        getContentPane().add(labelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+
+        labelCidade.setText("Cidade:");
+        getContentPane().add(labelCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+
+        labelEstado.setText("Estado:");
+        getContentPane().add(labelEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, -1, -1));
+
+        labelCep.setText("CEP:");
+        getContentPane().add(labelCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
+
+        labelRua.setText("Rua:");
+        getContentPane().add(labelRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
+
+        labelNumero.setText("Nº:");
+        getContentPane().add(labelNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, -1, -1));
+
+        labelEndereco.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        labelEndereco.setText("Endereço");
+        getContentPane().add(labelEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, -1, -1));
+
+        labelBairro.setText("Bairro:");
+        getContentPane().add(labelBairro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, -1));
+
+        textFieldNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldNomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(textFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 256, -1));
+
+        textFieldCnpj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldCnpjActionPerformed(evt);
+            }
+        });
+        getContentPane().add(textFieldCnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 256, -1));
+
+        textFieldTelefone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldTelefoneActionPerformed(evt);
+            }
+        });
+        getContentPane().add(textFieldTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 256, -1));
+
+        textFieldEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldEmailActionPerformed(evt);
+            }
+        });
+        getContentPane().add(textFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 256, -1));
+
+        textFieldBairro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldBairroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(textFieldBairro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 270, -1));
+
+        textFieldNome6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldNome6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(textFieldNome6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 256, -1));
+
+        textFieldCidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldCidadeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(textFieldCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 140, -1));
+
+        textFieldEstado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldEstadoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(textFieldEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 80, -1));
+
+        textFieldNumero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldNumeroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(textFieldNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 60, -1));
+
+        textFieldRua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldRuaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(textFieldRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 190, -1));
+
+        buttonConfirmar.setText("Confirmar");
+        buttonConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonConfirmarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(buttonConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, -1, -1));
+
+        buttonCancelar.setText("Cancelar");
+        getContentPane().add(buttonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void textFieldCepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldCepActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldCepActionPerformed
+
+    private void textFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldNomeActionPerformed
+
+    private void textFieldCnpjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldCnpjActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldCnpjActionPerformed
+
+    private void textFieldTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldTelefoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldTelefoneActionPerformed
+
+    private void textFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldEmailActionPerformed
+
+    private void textFieldBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldBairroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldBairroActionPerformed
+
+    private void textFieldNome6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNome6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldNome6ActionPerformed
+
+    private void textFieldCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldCidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldCidadeActionPerformed
+
+    private void textFieldEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldEstadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldEstadoActionPerformed
+
+    private void textFieldNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNumeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldNumeroActionPerformed
+
+    private void textFieldRuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldRuaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldRuaActionPerformed
+
+    private void buttonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConfirmarActionPerformed
+        // TODO add your handling code here:
+        
+        try{
+            validarCampos();
+            
+            Farmacia f = new Farmacia();
+            f.setNome(textFieldNome.getText());
+            f.setCnpj(textFieldCnpj.getText());
+            f.setTelefone(textFieldTelefone.getText());
+            f.setEmail(textFieldEmail.getText());
+            f.getId_endereco().setCidade(textFieldCidade.getText());
+            f.getId_endereco().setEstado(textFieldEstado.getText());
+            f.getId_endereco().setCep(textFieldCep.getText());
+            f.getId_endereco().setRua(textFieldRua.getText());
+            f.getId_endereco().setNumero(textFieldNumero.getText());
+            f.getId_endereco().setBairro(textFieldBairro.getText());
+            
+            farmaciaDAO.inserir(f);
+            
+            JOptionPane.showMessageDialog(this, "Farmacia salva com sucesso",
+                    "Cadastro", JOptionPane.INFORMATION_MESSAGE);
+            
+            dispose();
+        
+    }   catch (Exception ex) {
+            ex.printStackTrace();
+            System.err.print(ex.getMessage());
+            JOptionPane.showConfirmDialog(this, "ERRO" + ex.getMessage(), 
+                    "Erro ao inserir", JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_buttonConfirmarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -67,5 +345,30 @@ public class FarmaciaJFrame extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonCancelar;
+    private javax.swing.JButton buttonConfirmar;
+    private javax.swing.JLabel labelBairro;
+    private javax.swing.JLabel labelCep;
+    private javax.swing.JLabel labelCidade;
+    private javax.swing.JLabel labelCnpj;
+    private javax.swing.JLabel labelEmail;
+    private javax.swing.JLabel labelEndereco;
+    private javax.swing.JLabel labelEstado;
+    private javax.swing.JLabel labelFarmacia;
+    private javax.swing.JLabel labelNome;
+    private javax.swing.JLabel labelNumero;
+    private javax.swing.JLabel labelRua;
+    private javax.swing.JLabel labelTelefone;
+    private javax.swing.JTextField textFieldBairro;
+    private javax.swing.JTextField textFieldCep;
+    private javax.swing.JTextField textFieldCidade;
+    private javax.swing.JTextField textFieldCnpj;
+    private javax.swing.JTextField textFieldEmail;
+    private javax.swing.JTextField textFieldEstado;
+    private javax.swing.JTextField textFieldNome;
+    private javax.swing.JTextField textFieldNome6;
+    private javax.swing.JTextField textFieldNumero;
+    private javax.swing.JTextField textFieldRua;
+    private javax.swing.JTextField textFieldTelefone;
     // End of variables declaration//GEN-END:variables
 }
