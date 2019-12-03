@@ -7,6 +7,7 @@ package br.edu.map.farmacia.gui;
 
 import br.edu.map.farmacia.dao.FarmaciaDAO;
 import br.edu.map.farmacia.model.Farmacia;
+import br.edu.map.farmacia.util.MenssagensUtil;
 import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,9 +30,12 @@ public class FarmaciaJFrame extends javax.swing.JFrame {
         
         this.parent = parent;
         this.farmaciaDAO = new FarmaciaDAO();
-        setTitle("Editar titulo");
+        
+        //setTitle("Editar titulo");
         //MensagensUtil.setLocale(1);
-        //setTitle(MensagensUtil.getMensagem(MensagensUtil.MSG_LABEL_EDITAR_TITULO));
+        setTitle(MenssagensUtil.getMensagem(MenssagensUtil.MSG_TITULO_EDITARFARMACIA));
+        
+   
         
         initComponents();
         

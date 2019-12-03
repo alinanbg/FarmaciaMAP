@@ -7,6 +7,7 @@ package br.edu.map.farmacia.gui;
 
 import br.edu.map.farmacia.dao.FarmaciaDAO;
 import br.edu.map.farmacia.model.Farmacia;
+import br.edu.map.farmacia.util.MenssagensUtil;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,6 +30,64 @@ public class FarmaciasJFrame extends javax.swing.JFrame {
     public FarmaciasJFrame() {
         initComponents();
         preencherTabela(null);
+    }
+    
+    private void setProperties(){
+        //menuIdioma;
+        labelFarmacias.setText(MenssagensUtil.getMensagem(MenssagensUtil.MSG_TITULO_FARMACIA));
+        buttonNovo.setText(MenssagensUtil.getMensagem(MenssagensUtil.MSG_BUTTON_NOVO));
+        buttonEditar.setText(MenssagensUtil.getMensagem(MenssagensUtil.MSG_BUTTON_EDITAR));
+        buttonExcluir.setText(MenssagensUtil.getMensagem(MenssagensUtil.MSG_BUTTON_EXCLUIR));
+        buttonSair.setText(MenssagensUtil.getMensagem(MenssagensUtil.MSG_BUTTON_SAIR));
+        preencherTabela(null);
+        
+    }
+
+    public Farmacia getFarmaciaSelecionada() {
+        return farmaciaSelecionada;
+    }
+
+    public void setFarmaciaSelecionada(Farmacia farmaciaSelecionada) {
+        this.farmaciaSelecionada = farmaciaSelecionada;
+    }
+    
+    public void preencherTabela(List<Farmacia> param){
+        try{
+            List<Farmacia> lista = (param == null) ? farmaciaDAO.listar() : param;
+            DefaultTableModel model = new DefaultTableModel();
+            
+            model.setColumnCount(11);
+            model.setColumnIdentifiers(new String[]{
+                MenssagensUtil.getMensagem(MenssagensUtil.MSG_TABELA_CODIGO),
+                MenssagensUtil.getMensagem(MenssagensUtil.MSG_TABELA_NOME),
+                MenssagensUtil.getMensagem(MenssagensUtil.MSG_TABELA_CNPJ),
+                MenssagensUtil.getMensagem(MenssagensUtil.MSG_TABELA_TELEFONE),
+                MenssagensUtil.getMensagem(MenssagensUtil.MSG_TABELA_EMAIL),
+                MenssagensUtil.getMensagem(MenssagensUtil.MSG_TABELA_RUA),
+                MenssagensUtil.getMensagem(MenssagensUtil.MSG_TABELA_NUMERO),
+                MenssagensUtil.getMensagem(MenssagensUtil.MSG_TABELA_BAIRRO),
+                MenssagensUtil.getMensagem(MenssagensUtil.MSG_TABELA_CIDADE),
+                MenssagensUtil.getMensagem(MenssagensUtil.MSG_TABELA_ESTADO),
+                MenssagensUtil.getMensagem(MenssagensUtil.MSG_TABELA_CEP)});
+            model.setRowCount(lista.size());
+            
+            for(int i = 0; i<lista.size(); i++){
+                model.setValueAt(lista.get(i).getCodigo(), i, 0);
+                model.setValueAt(lista.get(i).getNome(), i, 1);
+                model.setValueAt(lista.get(i).getCnpj(), i, 2);
+                model.setValueAt(lista.get(i).getTelefone(), i, 3);
+                model.setValueAt(lista.get(i).getEmail(), i, 4);
+                model.setValueAt(lista.get(i).getId_endereco().getRua(), i, 5);
+                model.setValueAt(lista.get(i).getId_endereco().getNumero(), i, 6);
+                model.setValueAt(lista.get(i).getId_endereco().getBairro(), i, 7);
+                model.setValueAt(lista.get(i).getId_endereco().getCidade(), i, 8);
+                model.setValueAt(lista.get(i).getId_endereco().getEstado(), i, 9);
+                model.setValueAt(lista.get(i).getId_endereco().getCep(), i, 10);          
+            }
+            //tableFarmacias.;
+            
+            }
+        }
     }
 
     /**
@@ -192,6 +251,12 @@ public class FarmaciasJFrame extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_buttonSairActionPerformed
+    
+    //private void tableFarmaciasMouseClicked(java.awt.event.MouseEvent evt){
+    
+    // }
+
+
 
     private void textFieldBuscaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldBuscaKeyReleased
         // TODO add your handling code here:
